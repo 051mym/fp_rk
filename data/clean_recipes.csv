@@ -1,4 +1,4 @@
-recipe_id,recipe_tag,title,rating,total_reviews,ingredients,calories,carbs,protein,cholesterol,sodium
+id_recipe,recipe_tag,title,rating,total_reviews,ingredients,calories,carbs,protein,cholesterol,sodium
 1,italian,Italian Chicken Cacciatore,5.0,3,"[olive oil, onion, all-purpose flour, salt, pepper, chicken thighs, dry white wine,  tomatoes, (6 ounce) cans tomato paste, white sugar, salt, pepper, chicken broth, black olives,  fresh parsley, torn basil leaves]",587,36.5,38.8,117,1707
 2,italian,Spaghetti Cacio e Pepe,4.58,73,"[spaghetti, olive oil, garlic, pepper,  pecorino romano cheese]",806,87.8,31.6,54,633
 3,italian,Easy Caponata,4.67,3,"[stalks stalk celery, olive oil, onion, medium eggplant, pepper, zucchini, tomato puree (passata), white vinegar, white sugar, black olives, raisins, pine nuts, capers, salt, pepper, leaves basil]",289,25.2,4.4,0,424
