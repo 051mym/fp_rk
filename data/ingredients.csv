@@ -1,178 +1,156 @@
-ingredients,total
-pepper,407
-salt,395
-garlic,317
-onion,174
-white sugar,169
-water,152
-chicken,125
-olive oil,109
-water},91
-soy sauce,83
-cilantro,81
-{vegetable oil,79
-vegetable oil,78
-ground cumin,75
-butter,75
-fish sauce,73
-ginger root,71
-{all-purpose flour,66
-tomatoes,63
-green onions,58
-paprika,54
-{eggs,52
-ground turmeric,49
-milk,45
-coconut milk,44
-lime juice,42
-{parsley,41
-oregano,41
-ground coriander,40
-cornstarch,39
-carrots,38
-{soy sauce,38
-brown sugar,37
-tomato sauce,34
-{onion,34
-ginger,34
-potatoes,33
-egg,33
-lemon juice,33
-garlic powder},32
-rice vinegar,32
-curry powder,31
-chili powder,31
-olive oil},28
-sesame oil,25
-cilantro},25
-sesame oil},25
-carrot,25
-garam masala,24
-tomato paste,24
-ground cinnamon,24
-green onion,24
-parsley,23
-{white sugar,23
-lemon,22
-bean sprouts,22
-lime,22
-sour cream,21
-honey,21
-{butter,20
-monterey jack cheese,20
-eggs,20
-flour tortillas,19
-parmesan cheese,19
-bay leaves,19
-{onions,19
-ground ginger,18
-cheddar cheese},18
-tomato,18
-all-purpose flour,18
-onions,17
-ground beef},17
-basil,17
-bay leaf,17
-white rice,16
-ketchup,16
-plain yogurt,16
-{basil,16
-medium onion,15
-cucumber,15
-oil for frying,15
-heavy cream,14
-cumin seeds,14
-salsa,14
-peanut oil,14
-ola oil,14
-black olives,14
-white wine,13
-rice noodles,13
-rice wine vinegar,13
-boneless,13
-black beans},13
-parmesan cheese},13
-{heavy cream,13
-vanilla extract,13
-mushrooms,13
-red onion,12
-shallots,12
-spinach,12
-shrimp,12
-vegetable oil for frying,12
-extra-virgin olive oil,12
-mint,12
-salt},12
-baking powder,12
-sesame seeds,12
-yellow onion,11
-head cabbage,11
-whole cloves,11
-garlic powder,11
-thyme,11
-package cream cheese,11
-mozzarella cheese,11
-green beans,11
-mirin (japanese sweet wine)},10
-{lean ground beef,10
-chicken},10
-basil leaves,10
-oyster sauce,10
-ground pork,10
-whole kernel corn,10
-shiitake mushrooms,10
-corn tortillas,10
-{pepper,10
-hoisin sauce,9
-lemon grass,9
-onion powder,9
-sesame seeds},9
-medium shrimp,9
-heavy whipping cream},9
-package taco seasoning mix,9
-balsamic vinegar},9
-ground nutmeg,9
-peanuts,9
-red wine},9
-chili powder},9
-ground cardamom,8
-mayonnaise,8
-raisins,8
-margarine,8
-cheddar cheese,8
-lemon zest,8
-egg yolks,8
-peanut butter,8
-creamy peanut butter,8
-white vinegar,8
-dry white wine,8
-vegetable broth,8
-{lemon juice,7
-mint leaves},7
-melted butter,7
-zucchini,7
-distilled white vinegar,7
-{flour tortillas,7
-{water,7
-sugar,7
-skewers,7
-chives,7
-potatoes},7
-sake,7
-{mushrooms,7
-jasmine rice,7
-short-grain white rice,6
-{green onion,6
-beef broth,6
-slices bacon,6
-worcestershire sauce,6
-active dry yeast,6
-cilantro leaves,6
-{curry powder,6
-limes,6
-frozen green peas,6
-basmati rice,6
-cumin,6
-condensed milk,6
-green onions},6
-{curry paste,6
+ingredients,total,value
+pepper,417,rendah
+salt,410,rendah
+garlic,317,rendah
+water,250,sedang
+onion,15,tinggi
+white sugar,6,tinggi
+vegetable oil,153,sedang
+chicken,128,tinggi
+olive oil,11,tinggi
+soy sauce,119,tinggi
+butter,93,tinggi
+all,85,tinggi
+ground cumin,77,tinggi
+fish sauce,74,tinggi
+ginger root,71,tinggi
+eggs,70,tinggi
+cilantro,39,tinggi
+tomatoes,66,tinggi
+green onions,61,tinggi
+parsley,9,tinggi
+paprika,53,tinggi
+ground turmeric,49,tinggi
+milk,46,tinggi
+sesame oil,46,tinggi
+coconut milk,42,tinggi
+lime juice,42,tinggi
+garlic powder,42,tinggi
+oregano,41,tinggi
+ground coriander,40,tinggi
+cornstarch,40,tinggi
+potatoes,40,tinggi
+chili powder,40,tinggi
+curry powder,38,tinggi
+brown sugar,38,tinggi
+carrots,37,tinggi
+lemon juice,37,tinggi
+onions,36,tinggi
+ginger,35,tinggi
+rice vinegar,34,tinggi
+egg,33,tinggi
+tomato sauce,32,tinggi
+basil,31,tinggi
+green onion,27,tinggi
+flour tortillas,26,tinggi
+ground cinnamon,26,tinggi
+garam masala,26,tinggi
+carrot,25,tinggi
+heavy cream,25,tinggi
+lime,24,tinggi
+tomato paste,24,tinggi
+lemon,22,tinggi
+honey,21,tinggi
+ground ginger,21,tinggi
+bean sprouts,20,tinggi
+Parmesan cheese,12,tinggi
+tomato,20,tinggi
+ground beef,20,tinggi
+mushrooms,19,tinggi
+bay leaves,19,tinggi
+sour cream,18,tinggi
+spinach,17,tinggi
+bay leaf,17,tinggi
+plain yogurt,17,tinggi
+Monterey Jack cheese,17,tinggi
+vanilla extract,16,tinggi
+ketchup,16,tinggi
+white rice,15,tinggi
+cucumber,15,tinggi
+shrimp,14,tinggi
+mayonnaise,15,tinggi
+salsa,15,tinggi
+black beans,15,tinggi
+ola oil,14,tinggi
+oil for frying,14,tinggi
+cumin seeds,14,tinggi
+extra,14,tinggi
+baking powder,14,tinggi
+sesame seeds,7,tinggi
+mint,14,tinggi
+white wine,14,tinggi
+peanut oil,14,tinggi
+lean ground beef,14,tinggi
+Cheddar cheese,13,tinggi
+onion powder,13,tinggi
+rice wine vinegar,13,tinggi
+rice noodles,13,tinggi
+boneless,13,tinggi
+black olives,13,tinggi
+red onion,12,tinggi
+egg yolks,12,tinggi
+peanuts,12,tinggi
+shallots,12,tinggi
+oyster sauce,12,tinggi
+whole cloves,11,tinggi
+distilled white vinegar,11,tinggi
+shiitake mushrooms,11,tinggi
+green beans,11,tinggi
+red wine,11,tinggi
+yellow onion,11,tinggi
+package cream cheese,11,tinggi
+head cabbage,6,tinggi
+thyme,11,tinggi
+mint leaves,11,tinggi
+ground pork,10,tinggi
+whole kernel corn,10,tinggi
+heavy whipping cream,10,tinggi
+bunch green onions,10,tinggi
+mirin (Japanese sweet wine),10,tinggi
+dry white wine,9,tinggi
+lemon grass,9,tinggi
+balsamic vinegar,9,tinggi
+corn tortillas,9,tinggi
+hoisin sauce,9,tinggi
+sake,9,tinggi
+white vinegar,8,tinggi
+zucchini,8,tinggi
+margarine,8,tinggi
+raisins,8,tinggi
+peanut butter,8,tinggi
+package taco seasoning mix,8,tinggi
+miso paste,8,tinggi
+creamy peanut butter,8,tinggi
+sugar,8,tinggi
+slices bacon,8,tinggi
+lemon zest,8,tinggi
+Worcestershire sauce,8,tinggi
+vegetable broth,8,tinggi
+mozzarella cheese,8,tinggi
+cucumbers,7,tinggi
+ground cardamom,7,tinggi
+cilantro leaves,7,tinggi
+jasmine rice,7,tinggi
+cumin,7,tinggi
+white onion,7,tinggi
+vegetable oil for frying,6,tinggi
+vocado,7,tinggi
+stalks celery,7,tinggi
+egg whites,7,tinggi
+ground nutmeg,7,tinggi
+active dry yeast,7,tinggi
+condensed milk,7,tinggi
+red wine vinegar,7,tinggi
+sweet onion,6,tinggi
+bone,6,tinggi
+chives,6,tinggi
+dark soy sauce,6,tinggi
+basmati rice,6,tinggi
+bacon,6,tinggi
+dark sesame oil,6,tinggi
+beef broth,6,tinggi
+basil leaves,6,tinggi
+long grain white rice,6,tinggi
+limes,6,tinggi
+curry paste,6,tinggi
+short,6,tinggi
