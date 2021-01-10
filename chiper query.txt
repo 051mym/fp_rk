@@ -1,0 +1,22 @@
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/051mym/fp_rk/master/data/clean_recipes.csv' AS row
+MERGE (r:Recipes {id_recipe: row.id_recipe})
+  ON CREATE SET r.recipe_tag = row.recipe_tag, r.title=row.title, r.rating = row.rating, r.total_review = row.total_review, r.ingredients = row.ingredients, r.calories = row.calories, r.carbs = row.carbs, r.protein = row.protein, r.cholesterol = row.cholesterol, r.sodium = row.sodium
+
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/051mym/fp_rk/master/data/reviews.csv' AS row
+MERGE (r:Reviews {recipe_id: row.recipe_id})
+  ON CREATE SET r.review = row.review
+
+CREATE INDEX idRecipe FOR (r:Recipes) ON (r.id_recipe);
+CREATE INDEX titleRecipe FOR (r:Recipes) ON (r.title);
+CREATE INDEX ingredientsRecipe FOR (r:Recipes) ON (r.ingredients);
+CREATE INDEX ratingRecipe FOR (r:Recipes) ON (r.rating);
+CREATE INDEX idReviews FOR (rv:Reviews) ON (rv.recipe_id);
+
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/051mym/fp_rk/master/data/clean_recipes.csv' AS row
+MATCH (r:Recipes {id_recipe : row.id_recipe})
+MATCH (rv:Reviews {: row.EmployeeID})
+MERGE (employee)-[:SOLD]->(order);
+
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/051mym/fp_rk/master/data/clean_recipes.csv' AS row
+MERGE (r:Recipes {id_recipe: row.id_recipe})
+  ON CREATE SET r.recipe_tag = row.recipe_tag, r.title=row.title, r.calories = row.calories, r.carbs = row.carbs, r.protein = row.protein, r.cholesterol = row.cholesterol, r.sodium = row.sodium
