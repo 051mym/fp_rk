@@ -10,9 +10,10 @@ MERGE (i:Ingredients {id_ingredients: row.id_ingredients})
   ON CREATE SET i.ingredient = row.ingredients, i.total=row.total, i.value = row.value
 
 # make relation
-LOAD CSV WITH HEADERS FROM https://raw.githubusercontent.com/051mym/fp_rk/master/data/relation.csv AS row
-MERGE (r:Recipes{title:row.title})
-WITH r
-MATCH (i:Ingredients{ingredient:row.ingredients})
-CREATE UNIQUE (r)-[:Have_Components]->(i)
-RETURN a;
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/051mym/fp_rk/master/data/relation.csv' AS row
+MATCH (r:Recipes),(i:Ingredients)
+CREATE (r)-[re:Have_Components]->(i)
+
+# delete semua bang
+MATCH (n)
+DETACH DELETE n
