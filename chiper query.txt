@@ -3,3 +3,9 @@ LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/051mym/fp_rk/maste
 MERGE (r:Recipes {id_recipe: row.recipe_id})
   ON CREATE SET r.recipe_tag = row.recipe_tag, r.title=row.title, r.calories = row.calories, r.carbs = row.carbs, r.protein = row.protein, r.cholesterol = row.cholesterol, r.sodium = row.sodium
  
+
+# node ingredients
+
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/051mym/fp_rk/master/data/ingredients.csv' AS row
+MERGE (i:Ingredients {id_ingredients: row.id_ingredients})
+  ON CREATE SET i.ingredient = row.ingredients, i.total=row.total, i.value = row.value
