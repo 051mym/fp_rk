@@ -1,6 +1,6 @@
 from ingredient_parser.en import parse 
 
-print(type(parse('1 cup warm water (110 degrees F/45 degrees C)').get("name")))
+print(parse('1/4 cup dried white pea beans').get("measure"))
 
 # from recipe_searchers import search_recipe
 

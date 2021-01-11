@@ -1,19 +1,23 @@
 # Membuat node resep
-LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/051mym/fp_rk/master/data/clean_recipes.csv' AS row
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/051mym/fp_rk/master/data/1_clean_recipes.csv' AS row
 MERGE (r:Recipes {id_recipe: row.recipe_id})
   ON CREATE SET r.recipe_tag = row.recipe_tag, r.title=row.title, r.calories = row.calories, r.carbs = row.carbs, r.protein = row.protein, r.cholesterol = row.cholesterol, r.sodium = row.sodium
  
 
 # node ingredients
-LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/051mym/fp_rk/master/data/ingredients.csv' AS row
-MERGE (i:Ingredients {id_ingredients: row.id_ingredients})
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/051mym/fp_rk/master/data/2_ingredients.csv' AS row
+MERGE (i:Ingredients {id_ingredients: row.id_ingredient})
   ON CREATE SET i.ingredient = row.ingredients, i.total=row.total, i.value = row.value
 
 # make relation
-LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/051mym/fp_rk/master/data/relation.csv' AS row
-MATCH (r:Recipes),(i:Ingredients)
-CREATE (r)-[re:Have_Components]->(i)
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/051mym/fp_rk/master/data/3_relation.csv' AS row
+MATCH (r:Recipes {title:row.title}),(i:Ingredients {ingredient:row.ingredients })
+CREATE (r)-[re:Have_Components{weight:row.weight}]->(i)
 
 # delete semua bang
 MATCH (n)
 DETACH DELETE n
+
+# show semua bang
+MATCH (n)
+RETURN n
