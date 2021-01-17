@@ -9,11 +9,6 @@ LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/051mym/fp_rk/maste
 MERGE (i:Ingredients {id_ingredients: row.id_ingredient})
   ON CREATE SET i.ingredient = row.ingredients, i.total=row.total, i.value = row.value
 
-# make relation
-LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/051mym/fp_rk/master/data/3_relation.csv' AS row
-MATCH (r:Recipes {title:row.title}),(i:Ingredients {ingredient:row.ingredients })
-CREATE (r)-[re:Have_Components{weight:row.weight}]->(i)
-
 # delete semua bang
 MATCH (n)
 DETACH DELETE n
@@ -21,3 +16,49 @@ DETACH DELETE n
 # show semua bang
 MATCH (n)
 RETURN n
+
+# buat relasi
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/051mym/fp_rk/master/data/3_relation.csv' AS row
+MATCH (r:Recipes {title:row.title} ),(i:Ingredients {ingredient:row.ingredients })
+CREATE (r)<-[re:ComponentOf {weight: row.weight}]-(i)
+
+# rekomendasi bahan lain
+MATCH (ingredients:Ingredients {ingredient: 'egg'})-[:ComponentOf]->(recipe:Recipes)<-[:ComponentOf]-(ingredients_lain:Ingredients)-[:ComponentOf]->(recipe2:Recipes)<-[:ComponentOf]-(ingredients_lain_lain:Ingredients)
+WHERE ingredients <> ingredients_lain_lain
+AND NOT (ingredients)-[:ComponentOf]->(:Recipes)<-[:ComponentOf]-(ingredients_lain_lain)
+RETURN ingredients_lain_lain.ingredient, count(ingredients_lain_lain) as score
+ORDER BY score DESC
+LIMIT 5
+
+MATCH (i:Ingredients {ingredient:"egg"})-[:ComponentOf]->(r:Recipes)<-[:ComponentOf]-(i2:Ingredients)
+RETURN i2.ingredient AS recommendation, count(r) AS score ORDER BY score desc LIMIT 5
+
+MATCH (ingredients:Ingredients {ingredient: 'egg'})-[:ComponentOf]->(recipe:Recipes)<-[:ComponentOf]-(ingredients_lain:Ingredients)-[:ComponentOf]->(recipe2:Recipes)<-[:ComponentOf]-(ingredients_lain_lain:Ingredients)
+RETURN recipe.title, recipe2.title
+
+# path umbrusnya
+MATCH (ingredients:Ingredients {ingredient: 'chicken'})-[:ComponentOf]->(recipe:Recipes)<-[:ComponentOf]-(ingredients_lain:Ingredients)-[:ComponentOf]->(recipe2:Recipes)<-[:ComponentOf]-(ingredients2:Ingredients {ingredient: 'paprika'})
+WHERE NOT (ingredients)-[:ComponentOf]->(:Recipes)<-[:ComponentOf]-(ingredients2)
+RETURN ingredients, recipe, ingredients_lain, recipe2, ingredients2
+
+# buat relasi
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/051mym/fp_rk/master/data/3_relation.csv' AS row
+MATCH (r:Recipes {title:row.title} ),(i:Ingredients {ingredient:row.ingredients })
+CREATE (r)-[re:ComponentOf {weight: row.weight}]->(i)
+
+# rekomendasi bahan lain
+MATCH (recipe:Recipes {title: 'Chicken Tikka Masala'})-[:HasComponent]->(i:Ingredients)<-[:HasComponent]-(recipe_lain:Recipes)-[:HasComponent]->(i2:Ingredients)<-[:HasComponent]-(recipe_lain_lain:Recipes)
+WHERE recipe <> recipe_lain_lain
+AND NOT (recipe)-[:HasComponent]->(:Ingredients)<-[:HasComponent]-(recipe_lain_lain)
+RETURN recipe_lain_lain.title, count(recipe_lain_lain) as score
+ORDER BY score DESC
+LIMIT 5
+
+MATCH (r:Recipes {title:"Chicken Tikka Masala"})-[:HasComponent]->(i:Ingredients)<-[:HasComponent]-(r2:Recipes)
+RETURN r2.title AS recommendation, count(i) AS score ORDER BY score desc LIMIT 10
+
+MATCH (ingredients:Ingredients {ingredient: 'egg'})-[:ComponentOf]->(recipe:Recipes)<-[:ComponentOf]-(ingredients_lain:Ingredients)-[:ComponentOf]->(recipe2:Recipes)<-[:ComponentOf]-(ingredients_lain_lain:Ingredients)
+RETURN recipe.title, recipe2.title
+
+
+
